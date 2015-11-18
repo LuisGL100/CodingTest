@@ -13,12 +13,14 @@
 #import "ErrorMessageView.h"
 #import "WeatherDataProvider.h"
 #import "WWForecast.h"
+#import "WeatherView.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet LocationServicesDisabledView *locationDisabledView;
 @property (nonatomic, strong) IBOutlet ErrorMessageView *errorMessageView;
+@property (nonatomic, strong) IBOutlet WeatherView *weatherView;
 
 @end
 
@@ -35,6 +37,7 @@
     [self.locationDisabledView.openSettingsButton addTarget:self action:@selector(openSettingsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.locationDisabledView.manualEntryButton addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.errorMessageView.retryButton addTarget:self action:@selector(retryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.weatherView.retryBtn addTarget:self action:@selector(weatherRetryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,9 +61,10 @@
 - (void)displayLocationRestrictedScreen {
     self.locationDisabledView.hidden = NO;
     [self.locationDisabledView displayLocationRestricted];
+    [self.view bringSubviewToFront:self.locationDisabledView];
 }
 
-- (void)hideLocationDeniedScreen {
+- (void)hideLocationUnavailableScreen {
     self.locationDisabledView.hidden = YES;
 }
 
@@ -72,6 +76,17 @@
 
 - (void)hideErrorMessageView {
     self.errorMessageView.hidden = YES;
+}
+
+- (void)displayWeatherViewWithForecast:(WWForecast*)forecast {
+    
+    [self.weatherView updateViewWithForecast:forecast];
+    self.weatherView.hidden = NO;
+    [self.view bringSubviewToFront:self.weatherView];
+}
+
+- (void)hideWeatherView {
+    self.weatherView.hidden = YES;
 }
 
 - (void)handleLocationAuthStatus:(CLAuthorizationStatus)status {
@@ -90,7 +105,7 @@
             
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
-            [self hideLocationDeniedScreen];
+            [self hideLocationUnavailableScreen];
             [SVProgressHUD showWithStatus:@"Obtaining location.\nPlease Wait..."];
             [self.locationManager startUpdatingLocation];
             break;
@@ -106,7 +121,7 @@
     coordinate.latitude = locationCoordinate.latitude;
     coordinate.longitude = locationCoordinate.longitude;
     [WeatherDataProvider fetchWeatherInfoForCoordinate:coordinate onSuccess:^(WWForecast *forecast) {
-        
+        [self displayWeatherViewWithForecast:forecast];
         [SVProgressHUD dismiss];
     } onFailure:^(NSError *error) {
         [self displayErrorMessageViewWithText:@"There was a network-related issue."];
@@ -141,6 +156,11 @@
 }
 
 - (void)retryButtonTapped:(id)sender {
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)weatherRetryButtonTapped:(id)sender {
+    [self hideWeatherView];
     [self.locationManager startUpdatingLocation];
 }
 

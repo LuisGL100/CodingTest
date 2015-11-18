@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WestpacWeather/ViewController.m"
-            timestampString = "469535637.317328"
+            timestampString = "469538809.821059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-handleLocationAuthStatus:"
             landmarkType = "5">
          </BreakpointContent>
