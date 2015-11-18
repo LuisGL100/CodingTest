@@ -24,6 +24,7 @@
 		F60ED8461BFC5940004A255F /* WWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8451BFC5940004A255F /* WWBaseModel.m */; };
 		F60ED8471BFC5940004A255F /* WWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8451BFC5940004A255F /* WWBaseModel.m */; };
 		F60ED8491BFC596D004A255F /* WWBaseModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8481BFC596D004A255F /* WWBaseModelTests.m */; };
+		F60ED84B1BFC6357004A255F /* WWForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED84A1BFC6357004A255F /* WWForecastTests.m */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -71,6 +72,7 @@
 		F60ED8441BFC5940004A255F /* WWBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWBaseModel.h; sourceTree = "<group>"; };
 		F60ED8451BFC5940004A255F /* WWBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWBaseModel.m; sourceTree = "<group>"; };
 		F60ED8481BFC596D004A255F /* WWBaseModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWBaseModelTests.m; sourceTree = "<group>"; };
+		F60ED84A1BFC6357004A255F /* WWForecastTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWForecastTests.m; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				F64E1D5B1BFC1BB000CEA52D /* WestpacWeatherTests.m */,
 				F60ED8351BFC4A5C004A255F /* WeatherDataProviderTests.m */,
 				F60ED8481BFC596D004A255F /* WWBaseModelTests.m */,
+				F60ED84A1BFC6357004A255F /* WWForecastTests.m */,
 				F64E1D5D1BFC1BB000CEA52D /* Info.plist */,
 				F60ED83A1BFC510F004A255F /* forecast.json */,
 			);
@@ -416,6 +419,7 @@
 				F64E1D5C1BFC1BB000CEA52D /* WestpacWeatherTests.m in Sources */,
 				F60ED8491BFC596D004A255F /* WWBaseModelTests.m in Sources */,
 				F60ED8471BFC5940004A255F /* WWBaseModel.m in Sources */,
+				F60ED84B1BFC6357004A255F /* WWForecastTests.m in Sources */,
 				F60ED8431BFC5690004A255F /* WWCurrently.m in Sources */,
 				F60ED8341BFC438A004A255F /* WeatherDataProvider.m in Sources */,
 				F60ED8361BFC4A5C004A255F /* WeatherDataProviderTests.m in Sources */,
