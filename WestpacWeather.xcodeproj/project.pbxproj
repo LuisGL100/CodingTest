@@ -13,6 +13,10 @@
 		F60ED82D1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */; };
 		F60ED82F1BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */; };
 		F60ED8301BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */; };
+		F60ED8331BFC438A004A255F /* WeatherDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8321BFC438A004A255F /* WeatherDataProvider.m */; };
+		F60ED8341BFC438A004A255F /* WeatherDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8321BFC438A004A255F /* WeatherDataProvider.m */; };
+		F60ED8361BFC4A5C004A255F /* WeatherDataProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8351BFC4A5C004A255F /* WeatherDataProviderTests.m */; };
+		F60ED83B1BFC510F004A255F /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = F60ED83A1BFC510F004A255F /* forecast.json */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -48,6 +52,11 @@
 		F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServicesDisabledView.h; sourceTree = "<group>"; };
 		F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServicesDisabledView.m; sourceTree = "<group>"; };
 		F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationServicesDisabledView.xib; sourceTree = "<group>"; };
+		F60ED8311BFC438A004A255F /* WeatherDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataProvider.h; sourceTree = "<group>"; };
+		F60ED8321BFC438A004A255F /* WeatherDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataProvider.m; sourceTree = "<group>"; };
+		F60ED8351BFC4A5C004A255F /* WeatherDataProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataProviderTests.m; sourceTree = "<group>"; };
+		F60ED8371BFC4AF4004A255F /* WeatherDataProvider_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataProvider_private.h; sourceTree = "<group>"; };
+		F60ED83A1BFC510F004A255F /* forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +147,9 @@
 			children = (
 				F64E1D441BFC1BB000CEA52D /* AppDelegate.h */,
 				F64E1D451BFC1BB000CEA52D /* AppDelegate.m */,
+				F60ED8371BFC4AF4004A255F /* WeatherDataProvider_private.h */,
+				F60ED8311BFC438A004A255F /* WeatherDataProvider.h */,
+				F60ED8321BFC438A004A255F /* WeatherDataProvider.m */,
 				F64E1D471BFC1BB000CEA52D /* ViewController.h */,
 				F64E1D481BFC1BB000CEA52D /* ViewController.m */,
 				F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */,
@@ -164,7 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				F64E1D5B1BFC1BB000CEA52D /* WestpacWeatherTests.m */,
+				F60ED8351BFC4A5C004A255F /* WeatherDataProviderTests.m */,
 				F64E1D5D1BFC1BB000CEA52D /* Info.plist */,
+				F60ED83A1BFC510F004A255F /* forecast.json */,
 			);
 			path = WestpacWeatherTests;
 			sourceTree = "<group>";
@@ -295,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED83B1BFC510F004A255F /* forecast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +380,7 @@
 				F60ED82C1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
 				F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */,
 				F64E1D431BFC1BB000CEA52D /* main.m in Sources */,
+				F60ED8331BFC438A004A255F /* WeatherDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64E1D5C1BFC1BB000CEA52D /* WestpacWeatherTests.m in Sources */,
+				F60ED8341BFC438A004A255F /* WeatherDataProvider.m in Sources */,
+				F60ED8361BFC4A5C004A255F /* WeatherDataProviderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +546,7 @@
 		};
 		F64E1D6F1BFC1BB000CEA52D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WestpacWeatherTests/Info.plist;

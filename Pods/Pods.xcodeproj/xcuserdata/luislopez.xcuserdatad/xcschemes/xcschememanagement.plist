@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OHHTTPStubs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>045D3251CE3EFD09123EE341B544522A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75211A3C80B67C9DC7BB552DE9D8C24B</key>
+		<key>70D1532F6E682B51FD62EC7AA1589C38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A24A668BF934C45CF306A85723BBDAF9</key>
+		<key>D3E1C69CDB36DD93D14C3373DF036537</key>
 		<dict>
 			<key>primary</key>
 			<true/>

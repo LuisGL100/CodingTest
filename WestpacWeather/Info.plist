@@ -45,7 +45,11 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to display weather conditions near you.</string>
-	<key>ForecastIOKey</key>
+	<key>kForecastIOKey</key>
 	<string>4972e59ea28d1daefb0d2f9e522d271d</string>
+	<key>kForecastIOHost</key>
+	<string>https://api.forecast.io</string>
+	<key>kForecastIOForecastPath</key>
+	<string>forecast</string>
 </dict>
 </plist>
