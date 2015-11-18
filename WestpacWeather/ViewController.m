@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "LocationServicesDisabledView.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) IBOutlet LocationServicesDisabledView *locationDisabledView;
 
 @end
 
@@ -24,12 +26,7 @@
     self.locationManager.delegate = self;
     
     CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
-    if (authStatus == kCLAuthorizationStatusNotDetermined) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    else if (authStatus == kCLAuthorizationStatusDenied || authStatus == kCLAuthorizationStatusRestricted) {
-        [self displayLocationDeniedScreen];
-    }
+    [self handleLocationAuthStatus:authStatus];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,17 +35,40 @@
 }
 
 - (void)displayLocationDeniedScreen {
-    
+    self.locationDisabledView.hidden = NO;
+}
+
+- (void)hideLocationDeniedScreen {
+    self.locationDisabledView.hidden = YES;
+}
+
+- (void)handleLocationAuthStatus:(CLAuthorizationStatus)status {
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined:
+            [self.locationManager requestWhenInUseAuthorization];
+            break;
+            
+        case kCLAuthorizationStatusDenied:
+            [self displayLocationDeniedScreen];
+            break;
+            
+        case kCLAuthorizationStatusRestricted:
+            [self displayLocationDeniedScreen];
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            [self hideLocationDeniedScreen];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate methods
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        
-    }
-    else if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
-        [self displayLocationDeniedScreen];
-    }
+    [self handleLocationAuthStatus:status];
 }
 #pragma mark -
 

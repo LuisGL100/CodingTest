@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3EC698CBC2A0E7B845D7913D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C937F63059CBBE947CE9DCC /* libPods.a */; };
 		F60ED8291BFC1F95004A255F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60ED8281BFC1F95004A255F /* CoreLocation.framework */; };
+		F60ED82C1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */; };
+		F60ED82D1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */; };
+		F60ED82F1BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */; };
+		F60ED8301BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -41,6 +45,9 @@
 		0C937F63059CBBE947CE9DCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F60ED8281BFC1F95004A255F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServicesDisabledView.h; sourceTree = "<group>"; };
+		F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServicesDisabledView.m; sourceTree = "<group>"; };
+		F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationServicesDisabledView.xib; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +140,9 @@
 				F64E1D451BFC1BB000CEA52D /* AppDelegate.m */,
 				F64E1D471BFC1BB000CEA52D /* ViewController.h */,
 				F64E1D481BFC1BB000CEA52D /* ViewController.m */,
+				F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */,
+				F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */,
+				F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */,
 				F64E1D4A1BFC1BB000CEA52D /* Main.storyboard */,
 				F64E1D4D1BFC1BB000CEA52D /* Assets.xcassets */,
 				F64E1D4F1BFC1BB000CEA52D /* LaunchScreen.storyboard */,
@@ -276,6 +286,7 @@
 			files = (
 				F64E1D511BFC1BB000CEA52D /* LaunchScreen.storyboard in Resources */,
 				F64E1D4E1BFC1BB000CEA52D /* Assets.xcassets in Resources */,
+				F60ED82F1BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
 				F64E1D4C1BFC1BB000CEA52D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED8301BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */,
+				F60ED82C1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
 				F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */,
 				F64E1D431BFC1BB000CEA52D /* main.m in Sources */,
 			);
@@ -368,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64E1D671BFC1BB000CEA52D /* WestpacWeatherUITests.m in Sources */,
+				F60ED82D1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
