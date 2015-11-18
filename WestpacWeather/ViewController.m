@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <SVProgressHUD.h>
 #import "LocationServicesDisabledView.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
@@ -24,6 +25,8 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    // This is not a turn-by-turn app so high accuracy is not needed.
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
     
     [self.locationDisabledView.openSettingsButton addTarget:self action:@selector(openSettingsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.locationDisabledView.manualEntryButton addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -72,6 +75,8 @@
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             [self hideLocationDeniedScreen];
+            [SVProgressHUD showWithStatus:@"Obtaining location.\nPlease Wait..."];
+            [self.locationManager startUpdatingLocation];
             break;
             
         default:
@@ -82,6 +87,16 @@
 #pragma mark - CLLocationManagerDelegate methods
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     [self handleLocationAuthStatus:status];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    NSLog(@"");
+    [SVProgressHUD dismiss];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"");
+    [SVProgressHUD dismiss];
 }
 
 #pragma mark - Target-Action methods

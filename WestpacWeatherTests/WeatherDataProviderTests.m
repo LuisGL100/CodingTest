@@ -90,7 +90,7 @@
     
     self.asyncExpectation = [self expectationWithDescription:@"WeatherInfo successfully retrieved"];
     
-    [WeatherDataProvider fetchWeatherInfoForCoordinate:coordinate onSuccess:^{
+    [WeatherDataProvider fetchWeatherInfoForCoordinate:coordinate onSuccess:^(WWForecast *forecast){
         [self.asyncExpectation fulfill];
     } onFailure:^(NSError *error) {
         XCTFail(@"Failed to retrieve weatherInfo");

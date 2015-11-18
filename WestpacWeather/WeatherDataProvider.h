@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class WWForecast;
+
 typedef struct {
     double latitude;
     double longitude;
@@ -16,7 +18,7 @@ typedef struct {
 @interface WeatherDataProvider : NSObject
 
 + (void)fetchWeatherInfoForCoordinate:(WWCoordinate)coordinate
-                            onSuccess:(void(^)(void))successBlock
+                            onSuccess:(void(^)(WWForecast *forecast))successBlock
                             onFailure:(void(^)(NSError *error))failureBlock;
 
 @end

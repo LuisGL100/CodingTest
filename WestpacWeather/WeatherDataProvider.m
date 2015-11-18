@@ -8,6 +8,7 @@
 
 #import "WeatherDataProvider.h"
 #import <AFNetworking.h>
+#import "WWForecast.h"
 
 #define ForecastIOKey               @"kForecastIOKey"
 #define ForecastIOHost              @"kForecastIOHost"
@@ -48,16 +49,18 @@
 }
 
 + (void)fetchWeatherInfoForCoordinate:(WWCoordinate)coordinate
-                            onSuccess:(void(^)(void))successBlock
+                            onSuccess:(void(^)(WWForecast *forecast))successBlock
                             onFailure:(void(^)(NSError *error))failureBlock {
     
     NSString *urlStr = [self urlStringForCoordinate:coordinate service:[self forecastIOForecastPath]];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:urlStr parameters:nil
          success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+             
+             WWForecast *forecast = [[WWForecast alloc] initWithDataSource:responseObject];
          
              if (successBlock) {
-                 successBlock();
+                 successBlock(forecast);
              }
          }
          failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
