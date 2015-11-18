@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EC698CBC2A0E7B845D7913D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C937F63059CBBE947CE9DCC /* libPods.a */; };
+		F60ED8291BFC1F95004A255F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60ED8281BFC1F95004A255F /* CoreLocation.framework */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -39,6 +40,7 @@
 		058711A6A624C876BD1447B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0C937F63059CBBE947CE9DCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F60ED8281BFC1F95004A255F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED8291BFC1F95004A255F /* CoreLocation.framework in Frameworks */,
 				3EC698CBC2A0E7B845D7913D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		8DB2A04FC85DE86374732666 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F60ED8281BFC1F95004A255F /* CoreLocation.framework */,
 				0C937F63059CBBE947CE9DCC /* libPods.a */,
 			);
 			name = Frameworks;

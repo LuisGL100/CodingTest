@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -16,12 +19,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
+    if (authStatus == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    else if (authStatus == kCLAuthorizationStatusDenied || authStatus == kCLAuthorizationStatusRestricted) {
+        [self displayLocationDeniedScreen];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)displayLocationDeniedScreen {
+    
+}
+
+#pragma mark - CLLocationManagerDelegate methods
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+    }
+    else if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        [self displayLocationDeniedScreen];
+    }
+}
+#pragma mark -
 
 @end
