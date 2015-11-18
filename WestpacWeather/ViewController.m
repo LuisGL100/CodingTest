@@ -25,6 +25,13 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
+    [self.locationDisabledView.openSettingsButton addTarget:self action:@selector(openSettingsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.locationDisabledView.manualEntryButton addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
     [self handleLocationAuthStatus:authStatus];
 }
@@ -36,6 +43,12 @@
 
 - (void)displayLocationDeniedScreen {
     self.locationDisabledView.hidden = NO;
+    [self.locationDisabledView displayLocationDenied];
+}
+
+- (void)displayLocationRestrictedScreen {
+    self.locationDisabledView.hidden = NO;
+    [self.locationDisabledView displayLocationRestricted];
 }
 
 - (void)hideLocationDeniedScreen {
@@ -53,7 +66,7 @@
             break;
             
         case kCLAuthorizationStatusRestricted:
-            [self displayLocationDeniedScreen];
+            [self displayLocationRestrictedScreen];
             break;
             
         case kCLAuthorizationStatusAuthorizedAlways:
@@ -70,6 +83,14 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     [self handleLocationAuthStatus:status];
 }
-#pragma mark -
+
+#pragma mark - Target-Action methods
+- (void)manualEntryButtonTapped:(id)sender {
+    
+}
+
+- (void)openSettingsButtonTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
 
 @end

@@ -8,8 +8,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationServicesDisabledView">
             <connections>
                 <outlet property="container" destination="iN0-l3-epB" id="LTj-rd-TIU"/>
+                <outlet property="manualEntryBtnTopCstr" destination="ThL-87-f1u" id="cGp-v1-uqI"/>
                 <outlet property="manualEntryButton" destination="K6f-hS-vZh" id="b79-In-XCA"/>
+                <outlet property="openSettingsBtnHeightCstr" destination="ya6-aB-h5d" id="MqI-gy-qt1"/>
+                <outlet property="openSettingsBtnTopCstr" destination="YvB-an-vgL" id="3Xn-ca-Pvf"/>
                 <outlet property="openSettingsButton" destination="0mB-eb-2UQ" id="zgE-iw-K7D"/>
+                <outlet property="orLblHeightCstr" destination="n8C-Wk-VYp" id="05F-a0-8gb"/>
+                <outlet property="orLblTopCstr" destination="blU-lH-cRA" id="z0d-I5-NH1"/>
                 <outlet property="textLabel" destination="4e0-My-xUg" id="TQy-WB-UCc"/>
             </connections>
         </placeholder>
@@ -19,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e0-My-xUg">
-                    <rect key="frame" x="8" y="160" width="584" height="20.5"/>
+                    <rect key="frame" x="20" y="160" width="560" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,13 +61,13 @@
             <constraints>
                 <constraint firstItem="4e0-My-xUg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="2TY-QR-c8c"/>
                 <constraint firstItem="zgj-Py-fyv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4Zb-Jb-Z7n"/>
-                <constraint firstAttribute="trailing" secondItem="4e0-My-xUg" secondAttribute="trailing" constant="8" id="JSJ-bm-0RN"/>
+                <constraint firstAttribute="trailing" secondItem="4e0-My-xUg" secondAttribute="trailing" constant="20" id="JSJ-bm-0RN"/>
                 <constraint firstItem="4e0-My-xUg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="160" id="Tby-vN-x3R"/>
                 <constraint firstItem="K6f-hS-vZh" firstAttribute="top" secondItem="zgj-Py-fyv" secondAttribute="bottom" constant="20" id="ThL-87-f1u"/>
                 <constraint firstItem="K6f-hS-vZh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Yk4-0f-AhN"/>
                 <constraint firstItem="0mB-eb-2UQ" firstAttribute="top" secondItem="4e0-My-xUg" secondAttribute="bottom" constant="30" id="YvB-an-vgL"/>
                 <constraint firstItem="zgj-Py-fyv" firstAttribute="top" secondItem="0mB-eb-2UQ" secondAttribute="bottom" constant="27" id="blU-lH-cRA"/>
-                <constraint firstItem="4e0-My-xUg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cjD-mq-b2C"/>
+                <constraint firstItem="4e0-My-xUg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cjD-mq-b2C"/>
                 <constraint firstItem="0mB-eb-2UQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wcn-Sz-ppZ"/>
             </constraints>
             <variation key="default">

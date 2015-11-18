@@ -16,4 +16,7 @@ IB_DESIGNABLE
 @property (nonatomic, readonly) UIButton *openSettingsButton;
 @property (nonatomic, readonly) UIButton *manualEntryButton;
 
+- (void)displayLocationDenied;
+- (void)displayLocationRestricted;
+
 @end
