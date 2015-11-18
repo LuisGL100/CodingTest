@@ -49,7 +49,7 @@
     
     WWCurrently *currently = [[WWCurrently alloc] initWithDataSource:dataSource];
     XCTAssert([currently.summary isEqualToString:@"Partly Cloudy"]);
-    XCTAssert([currently.iconName isEqualToString:@"partly-cloudy-night"]);
+    XCTAssert(currently.iconType == IconTypePartlyCloudyNight);
     XCTAssert([currently.precipProbability isEqualToNumber:@0]);
     XCTAssert([currently.temperature isEqualToNumber:@56.15]);
     XCTAssert([currently.humidity isEqualToNumber:@0.79]);
@@ -59,7 +59,7 @@
     
     WWCurrently *currently = [[WWCurrently alloc] initWithDataSource:nil];
     XCTAssert(currently.summary == nil);
-    XCTAssert(currently.iconName == nil);
+    XCTAssert(currently.iconType == IconTypeUnknown);
     XCTAssert(currently.precipProbability == nil);
     XCTAssert(currently.temperature == nil);
     XCTAssert(currently.humidity == nil);
@@ -89,7 +89,7 @@
     
     WWCurrently *currently = [[WWCurrently alloc] initWithDataSource:dataSource];
     XCTAssert([currently.summary isEqualToString:@"Partly Cloudy"]);
-    XCTAssert(currently.iconName == nil);
+    XCTAssert(currently.iconType == IconTypeUnknown);
     XCTAssert([currently.precipProbability isEqualToNumber:@0]);
     XCTAssert(currently.temperature == nil);
     XCTAssert([currently.humidity isEqualToNumber:@0.79]);
@@ -100,10 +100,37 @@
     NSArray *dataSource = @[@"Hello", @"World"];
     WWCurrently *currently = [[WWCurrently alloc] initWithDataSource:(NSDictionary*)dataSource];
     XCTAssert(currently.summary == nil);
-    XCTAssert(currently.iconName == nil);
+    XCTAssert(currently.iconType == IconTypeUnknown);
     XCTAssert(currently.precipProbability == nil);
     XCTAssert(currently.temperature == nil);
     XCTAssert(currently.humidity == nil);
+}
+
+- (void)testIconTypeForName {
+    
+    WWCurrently *currently = [[WWCurrently alloc] init];
+    IconType type = [currently iconTypeForName:@"clear-day"];
+    XCTAssert(type == IconTypeClearDay);
+    type = [currently iconTypeForName:@"clear-night"];
+    XCTAssert(type == IconTypeClearNight);
+    type = [currently iconTypeForName:@"cloudy"];
+    XCTAssert(type == IconTypeCloudy);
+    type = [currently iconTypeForName:@"fog"];
+    XCTAssert(type == IconTypeFog);
+    type = [currently iconTypeForName:@"partly-cloudy-day"];
+    XCTAssert(type == IconTypePartlyCloudyDay);
+    type = [currently iconTypeForName:@"partly-cloudy-night"];
+    XCTAssert(type == IconTypePartlyCloudyNight);
+    type = [currently iconTypeForName:@"rain"];
+    XCTAssert(type == IconTypeRain);
+    type = [currently iconTypeForName:@"sleet"];
+    XCTAssert(type == IconTypeSleet);
+    type = [currently iconTypeForName:@"snow"];
+    XCTAssert(type == IconTypeSnow);
+    type = [currently iconTypeForName:@"wind"];
+    XCTAssert(type == IconTypeWind);
+    type = [currently iconTypeForName:@"helloWorld"];
+    XCTAssert(type == IconTypeUnknown);
 }
 
 @end

@@ -29,6 +29,10 @@
 
 @implementation WWForecast
 
+- (instancetype)init {
+    return [self initWithDataSource:nil];
+}
+
 - (instancetype)initWithDataSource:(NSDictionary*)dataSource {
     self = [super init];
     if (self) {
