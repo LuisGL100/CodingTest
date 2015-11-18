@@ -19,6 +19,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *temperature;
 @property (nonatomic, strong) IBOutlet UILabel *humidity;
 @property (nonatomic, strong) IBOutlet UIButton *retryBtn;
+@property (nonatomic, strong) IBOutlet UIButton *manualEntryBtn;
 
 @end
 

@@ -34,6 +34,10 @@
 		F60ED8581BFC93E7004A255F /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8561BFC93E7004A255F /* WeatherView.m */; };
 		F60ED85A1BFC93F5004A255F /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED8591BFC93F5004A255F /* WeatherView.xib */; };
 		F60ED85B1BFC93F5004A255F /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED8591BFC93F5004A255F /* WeatherView.xib */; };
+		F60ED85F1BFCA52A004A255F /* ManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED85D1BFCA52A004A255F /* ManualEntryViewController.m */; };
+		F60ED8601BFCA52A004A255F /* ManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED85D1BFCA52A004A255F /* ManualEntryViewController.m */; };
+		F60ED8611BFCA52A004A255F /* ManualEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED85E1BFCA52A004A255F /* ManualEntryViewController.xib */; };
+		F60ED8621BFCA52A004A255F /* ManualEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED85E1BFCA52A004A255F /* ManualEntryViewController.xib */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -89,6 +93,9 @@
 		F60ED8551BFC93E7004A255F /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
 		F60ED8561BFC93E7004A255F /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
 		F60ED8591BFC93F5004A255F /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		F60ED85C1BFCA52A004A255F /* ManualEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManualEntryViewController.h; sourceTree = "<group>"; };
+		F60ED85D1BFCA52A004A255F /* ManualEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManualEntryViewController.m; sourceTree = "<group>"; };
+		F60ED85E1BFCA52A004A255F /* ManualEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManualEntryViewController.xib; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +198,9 @@
 				F64E1D471BFC1BB000CEA52D /* ViewController.h */,
 				F64E1D481BFC1BB000CEA52D /* ViewController.m */,
 				F64E1D4A1BFC1BB000CEA52D /* Main.storyboard */,
+				F60ED85C1BFCA52A004A255F /* ManualEntryViewController.h */,
+				F60ED85D1BFCA52A004A255F /* ManualEntryViewController.m */,
+				F60ED85E1BFCA52A004A255F /* ManualEntryViewController.xib */,
 				F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */,
 				F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */,
 				F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */,
@@ -348,6 +358,7 @@
 				F60ED8531BFC733D004A255F /* ErrorMessageView.xib in Resources */,
 				F64E1D511BFC1BB000CEA52D /* LaunchScreen.storyboard in Resources */,
 				F64E1D4E1BFC1BB000CEA52D /* Assets.xcassets in Resources */,
+				F60ED8611BFCA52A004A255F /* ManualEntryViewController.xib in Resources */,
 				F60ED85A1BFC93F5004A255F /* WeatherView.xib in Resources */,
 				F60ED82F1BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
 				F64E1D4C1BFC1BB000CEA52D /* Main.storyboard in Resources */,
@@ -367,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60ED85B1BFC93F5004A255F /* WeatherView.xib in Resources */,
+				F60ED8621BFCA52A004A255F /* ManualEntryViewController.xib in Resources */,
 				F60ED8301BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
 				F60ED8541BFC733D004A255F /* ErrorMessageView.xib in Resources */,
 			);
@@ -436,6 +448,7 @@
 				F60ED8421BFC5690004A255F /* WWCurrently.m in Sources */,
 				F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */,
 				F64E1D431BFC1BB000CEA52D /* main.m in Sources */,
+				F60ED85F1BFCA52A004A255F /* ManualEntryViewController.m in Sources */,
 				F60ED8331BFC438A004A255F /* WeatherDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +476,7 @@
 				F60ED8511BFC7328004A255F /* ErrorMessageView.m in Sources */,
 				F64E1D671BFC1BB000CEA52D /* WestpacWeatherUITests.m in Sources */,
 				F60ED82D1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
+				F60ED8601BFCA52A004A255F /* ManualEntryViewController.m in Sources */,
 				F60ED8581BFC93E7004A255F /* WeatherView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

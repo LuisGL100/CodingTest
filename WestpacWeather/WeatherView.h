@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) UILabel *temperature;
 @property (nonatomic, readonly) UILabel *humidity;
 @property (nonatomic, readonly) UIButton *retryBtn;
+@property (nonatomic, readonly) UIButton *manualEntryBtn;
 
 - (void)updateViewWithForecast:(WWForecast*)forecast;
 

@@ -14,8 +14,9 @@
 #import "WeatherDataProvider.h"
 #import "WWForecast.h"
 #import "WeatherView.h"
+#import "ManualEntryViewController.h"
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <CLLocationManagerDelegate, ManualEntryViewControllerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet LocationServicesDisabledView *locationDisabledView;
@@ -38,6 +39,7 @@
     [self.locationDisabledView.manualEntryButton addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.errorMessageView.retryButton addTarget:self action:@selector(retryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.weatherView.retryBtn addTarget:self action:@selector(weatherRetryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.weatherView.manualEntryBtn addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -106,7 +108,7 @@
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             [self hideLocationUnavailableScreen];
-            [SVProgressHUD showWithStatus:@"Obtaining location.\nPlease Wait..."];
+            [SVProgressHUD showWithStatus:@"Obtaining weather information.\nPlease Wait..."];
             [self.locationManager startUpdatingLocation];
             break;
             
@@ -148,7 +150,11 @@
 
 #pragma mark - Target-Action methods
 - (void)manualEntryButtonTapped:(id)sender {
-    
+    ManualEntryViewController *manualEntryVC = [[ManualEntryViewController alloc] init];
+    manualEntryVC.delegate = self;
+    [self presentViewController:manualEntryVC
+                       animated:YES
+                     completion:nil];
 }
 
 - (void)openSettingsButtonTapped:(id)sender {
@@ -162,6 +168,23 @@
 - (void)weatherRetryButtonTapped:(id)sender {
     [self hideWeatherView];
     [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - ManualEntryViewControllerDelegate methods
+- (void)manualEntryViewController:(ManualEntryViewController *)manualEntryViewController
+           didDismissWithLatitude:(double)latitude
+                        longitude:(double)longitude {
+    
+    [self hideErrorMessageView];
+    [self hideLocationUnavailableScreen];
+    [self hideWeatherView];
+    
+    [SVProgressHUD showWithStatus:@"Obtaining weather information.\nPlease Wait..."];
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = latitude;
+    coordinate.longitude = longitude;
+    [self obtainWeatherInfoForLocationCordinate:coordinate];
 }
 
 @end

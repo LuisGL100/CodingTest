@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManualEntryViewController">
+            <connections>
+                <outlet property="goButton" destination="UyF-3o-BLP" id="2Qm-bO-fUN"/>
+                <outlet property="latitudeTextField" destination="FDx-3Q-OTp" id="9B4-1X-yex"/>
+                <outlet property="longitudeTextField" destination="yE8-Zq-a1n" id="88F-ak-Msm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude (between 90 and -90)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUB-IM-AAK">
+                    <rect key="frame" x="29" y="50" width="235" height="20.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FDx-3Q-OTp">
+                    <rect key="frame" x="29" y="79" width="541" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude (between 180 and -180)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-1S-0I1">
+                    <rect key="frame" x="29" y="136" width="264.5" height="20.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yE8-Zq-a1n">
+                    <rect key="frame" x="29" y="165" width="541" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyF-3o-BLP">
+                    <rect key="frame" x="29" y="228" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="YIJ-0T-eSD"/>
+                        <constraint firstAttribute="height" constant="30" id="n8I-E3-Hwf"/>
+                    </constraints>
+                    <state key="normal" title="Go!"/>
+                    <connections>
+                        <action selector="goButtonTapped:" destination="-1" eventType="touchUpInside" id="Euh-ID-Ood"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UyF-3o-BLP" firstAttribute="top" secondItem="yE8-Zq-a1n" secondAttribute="bottom" constant="33" id="1uY-iM-s9A"/>
+                <constraint firstItem="bUB-IM-AAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="7q8-Ic-uWJ"/>
+                <constraint firstItem="FDx-3Q-OTp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="BaI-Ku-Uot"/>
+                <constraint firstAttribute="trailing" secondItem="FDx-3Q-OTp" secondAttribute="trailing" constant="30" id="Nuu-jN-sBe"/>
+                <constraint firstItem="mEy-1S-0I1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="cTA-A8-J2l"/>
+                <constraint firstItem="FDx-3Q-OTp" firstAttribute="top" secondItem="bUB-IM-AAK" secondAttribute="bottom" constant="8.5" id="ejc-nS-mWo"/>
+                <constraint firstAttribute="trailing" secondItem="yE8-Zq-a1n" secondAttribute="trailing" constant="30" id="fp6-2a-5EN"/>
+                <constraint firstItem="bUB-IM-AAK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="glp-jM-OOi"/>
+                <constraint firstItem="UyF-3o-BLP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="iHS-HN-Zcl"/>
+                <constraint firstItem="yE8-Zq-a1n" firstAttribute="top" secondItem="mEy-1S-0I1" secondAttribute="bottom" constant="8.5" id="irq-Wo-DGv"/>
+                <constraint firstItem="yE8-Zq-a1n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="l8P-RF-EWP"/>
+                <constraint firstItem="mEy-1S-0I1" firstAttribute="top" secondItem="FDx-3Q-OTp" secondAttribute="bottom" constant="27" id="te7-f3-hGt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
