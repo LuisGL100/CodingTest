@@ -84,4 +84,15 @@
     XCTAssert([forecast.offset isEqualToNumber:@-8]);
 }
 
+- (void)testForecastModelWithWrongDataSource {
+    
+    NSArray *dataSource = @[@"Hello", @"World"];
+    WWForecast *forecast = [[WWForecast alloc] initWithDataSource:(NSDictionary*)dataSource];
+    XCTAssert(forecast.latitude == nil);
+    XCTAssert(forecast.longitude == nil);
+    XCTAssert(forecast.timezone == nil);
+    XCTAssert(forecast.offset == nil);
+    XCTAssert(forecast.currently == nil);
+}
+
 @end

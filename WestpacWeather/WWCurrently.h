@@ -11,6 +11,15 @@
 
 @interface WWCurrently : WWBaseModel
 
+@property (nonatomic, readonly) NSString *summary;
+@property (nonatomic, readonly) NSString *iconName;
+@property (nonatomic, readonly) NSNumber *precipProbability;
+@property (nonatomic, readonly) NSNumber *temperature;
+@property (nonatomic, readonly) NSNumber *humidity;
+
+// Ignoring all other information (e.g. windSpeed, visibility, etc) for the sake of simplicity
+
+
 - (instancetype)initWithDataSource:(NSDictionary*)dataSource;
 
 @end
