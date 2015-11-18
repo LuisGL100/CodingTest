@@ -26,6 +26,10 @@
 		F60ED8491BFC596D004A255F /* WWBaseModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED8481BFC596D004A255F /* WWBaseModelTests.m */; };
 		F60ED84B1BFC6357004A255F /* WWForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED84A1BFC6357004A255F /* WWForecastTests.m */; };
 		F60ED84D1BFC69EB004A255F /* WWCurrentlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED84C1BFC69EB004A255F /* WWCurrentlyTests.m */; };
+		F60ED8501BFC7328004A255F /* ErrorMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED84F1BFC7328004A255F /* ErrorMessageView.m */; };
+		F60ED8511BFC7328004A255F /* ErrorMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F60ED84F1BFC7328004A255F /* ErrorMessageView.m */; };
+		F60ED8531BFC733D004A255F /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED8521BFC733D004A255F /* ErrorMessageView.xib */; };
+		F60ED8541BFC733D004A255F /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60ED8521BFC733D004A255F /* ErrorMessageView.xib */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -75,6 +79,9 @@
 		F60ED8481BFC596D004A255F /* WWBaseModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWBaseModelTests.m; sourceTree = "<group>"; };
 		F60ED84A1BFC6357004A255F /* WWForecastTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWForecastTests.m; sourceTree = "<group>"; };
 		F60ED84C1BFC69EB004A255F /* WWCurrentlyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWCurrentlyTests.m; sourceTree = "<group>"; };
+		F60ED84E1BFC7328004A255F /* ErrorMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessageView.h; sourceTree = "<group>"; };
+		F60ED84F1BFC7328004A255F /* ErrorMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessageView.m; sourceTree = "<group>"; };
+		F60ED8521BFC733D004A255F /* ErrorMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorMessageView.xib; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +187,9 @@
 				F60ED82A1BFC2B13004A255F /* LocationServicesDisabledView.h */,
 				F60ED82B1BFC2B13004A255F /* LocationServicesDisabledView.m */,
 				F60ED82E1BFC2B54004A255F /* LocationServicesDisabledView.xib */,
+				F60ED84E1BFC7328004A255F /* ErrorMessageView.h */,
+				F60ED84F1BFC7328004A255F /* ErrorMessageView.m */,
+				F60ED8521BFC733D004A255F /* ErrorMessageView.xib */,
 				F64E1D4D1BFC1BB000CEA52D /* Assets.xcassets */,
 				F64E1D4F1BFC1BB000CEA52D /* LaunchScreen.storyboard */,
 				F64E1D521BFC1BB000CEA52D /* Info.plist */,
@@ -325,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED8531BFC733D004A255F /* ErrorMessageView.xib in Resources */,
 				F64E1D511BFC1BB000CEA52D /* LaunchScreen.storyboard in Resources */,
 				F64E1D4E1BFC1BB000CEA52D /* Assets.xcassets in Resources */,
 				F60ED82F1BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
@@ -345,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F60ED8301BFC2B54004A255F /* LocationServicesDisabledView.xib in Resources */,
+				F60ED8541BFC733D004A255F /* ErrorMessageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +418,7 @@
 				F60ED83E1BFC5630004A255F /* WWForecast.m in Sources */,
 				F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */,
 				F60ED8461BFC5940004A255F /* WWBaseModel.m in Sources */,
+				F60ED8501BFC7328004A255F /* ErrorMessageView.m in Sources */,
 				F60ED82C1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
 				F60ED8421BFC5690004A255F /* WWCurrently.m in Sources */,
 				F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */,
@@ -434,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60ED8511BFC7328004A255F /* ErrorMessageView.m in Sources */,
 				F64E1D671BFC1BB000CEA52D /* WestpacWeatherUITests.m in Sources */,
 				F60ED82D1BFC2B13004A255F /* LocationServicesDisabledView.m in Sources */,
 			);

@@ -22,17 +22,27 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-Dx-479" customClass="ErrorMessageView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YgI-Dx-479" secondAttribute="trailing" id="7ke-bB-Gco"/>
                             <constraint firstItem="8Sd-xZ-Atr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AKl-cy-iXy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YgI-Dx-479" secondAttribute="bottom" id="CZG-KY-cyM"/>
+                            <constraint firstItem="YgI-Dx-479" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dko-yN-a9m"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Sd-xZ-Atr" secondAttribute="bottom" id="cVm-wQ-zz5"/>
+                            <constraint firstItem="YgI-Dx-479" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tF6-My-zp3"/>
                             <constraint firstItem="8Sd-xZ-Atr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="unl-Xm-FQE"/>
                             <constraint firstAttribute="trailing" secondItem="8Sd-xZ-Atr" secondAttribute="trailing" id="wC8-2u-60j"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorMessageView" destination="YgI-Dx-479" id="qid-MP-FWx"/>
                         <outlet property="locationDisabledView" destination="8Sd-xZ-Atr" id="92A-zs-jYQ"/>
                     </connections>
                 </viewController>

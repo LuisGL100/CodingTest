@@ -10,11 +10,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import <SVProgressHUD.h>
 #import "LocationServicesDisabledView.h"
+#import "ErrorMessageView.h"
+#import "WeatherDataProvider.h"
+#import "WWForecast.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet LocationServicesDisabledView *locationDisabledView;
+@property (nonatomic, strong) IBOutlet ErrorMessageView *errorMessageView;
 
 @end
 
@@ -30,6 +34,7 @@
     
     [self.locationDisabledView.openSettingsButton addTarget:self action:@selector(openSettingsButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.locationDisabledView.manualEntryButton addTarget:self action:@selector(manualEntryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.errorMessageView.retryButton addTarget:self action:@selector(retryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -47,6 +52,7 @@
 - (void)displayLocationDeniedScreen {
     self.locationDisabledView.hidden = NO;
     [self.locationDisabledView displayLocationDenied];
+    [self.view bringSubviewToFront:self.locationDisabledView];
 }
 
 - (void)displayLocationRestrictedScreen {
@@ -56,6 +62,16 @@
 
 - (void)hideLocationDeniedScreen {
     self.locationDisabledView.hidden = YES;
+}
+
+- (void)displayErrorMessageViewWithText:(NSString*)message {
+    self.errorMessageView.errorLabel.text = message;
+    self.errorMessageView.hidden = NO;
+    [self.view bringSubviewToFront:self.errorMessageView];
+}
+
+- (void)hideErrorMessageView {
+    self.errorMessageView.hidden = YES;
 }
 
 - (void)handleLocationAuthStatus:(CLAuthorizationStatus)status {
@@ -84,18 +100,34 @@
     }
 }
 
+- (void)obtainWeatherInfoForLocationCordinate:(CLLocationCoordinate2D)locationCoordinate {
+    
+    WWCoordinate coordinate;
+    coordinate.latitude = locationCoordinate.latitude;
+    coordinate.longitude = locationCoordinate.longitude;
+    [WeatherDataProvider fetchWeatherInfoForCoordinate:coordinate onSuccess:^(WWForecast *forecast) {
+        
+        [SVProgressHUD dismiss];
+    } onFailure:^(NSError *error) {
+        [self displayErrorMessageViewWithText:@"There was a network-related issue."];
+        [SVProgressHUD dismiss];
+    }];
+}
+
 #pragma mark - CLLocationManagerDelegate methods
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     [self handleLocationAuthStatus:status];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"");
-    [SVProgressHUD dismiss];
+    [self.locationManager stopUpdatingLocation];
+    CLLocation *location = [locations firstObject];
+    [self obtainWeatherInfoForLocationCordinate:location.coordinate];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"");
+    [self.locationManager stopUpdatingLocation];
+    [self displayErrorMessageViewWithText:@"Unable to obtain location."];
     [SVProgressHUD dismiss];
 }
 
@@ -106,6 +138,10 @@
 
 - (void)openSettingsButtonTapped:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
+- (void)retryButtonTapped:(id)sender {
+    [self.locationManager startUpdatingLocation];
 }
 
 @end
