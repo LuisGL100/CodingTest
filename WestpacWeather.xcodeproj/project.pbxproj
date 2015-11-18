@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC698CBC2A0E7B845D7913D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C937F63059CBBE947CE9DCC /* libPods.a */; };
 		F64E1D431BFC1BB000CEA52D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D421BFC1BB000CEA52D /* main.m */; };
 		F64E1D461BFC1BB000CEA52D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D451BFC1BB000CEA52D /* AppDelegate.m */; };
 		F64E1D491BFC1BB000CEA52D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64E1D481BFC1BB000CEA52D /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		058711A6A624C876BD1447B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		0C937F63059CBBE947CE9DCC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F64E1D3E1BFC1BB000CEA52D /* WestpacWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64E1D421BFC1BB000CEA52D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F64E1D441BFC1BB000CEA52D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC698CBC2A0E7B845D7913D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C3701540E05327D172B539A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */,
+				058711A6A624C876BD1447B0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DB2A04FC85DE86374732666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C937F63059CBBE947CE9DCC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F64E1D351BFC1BB000CEA52D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				F64E1D5A1BFC1BB000CEA52D /* WestpacWeatherTests */,
 				F64E1D651BFC1BB000CEA52D /* WestpacWeatherUITests */,
 				F64E1D3F1BFC1BB000CEA52D /* Products */,
+				6C3701540E05327D172B539A /* Pods */,
+				8DB2A04FC85DE86374732666 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F64E1D6B1BFC1BB000CEA52D /* Build configuration list for PBXNativeTarget "WestpacWeather" */;
 			buildPhases = (
+				F76C0ABE1369003EAA337227 /* Check Pods Manifest.lock */,
 				F64E1D3A1BFC1BB000CEA52D /* Sources */,
 				F64E1D3B1BFC1BB000CEA52D /* Frameworks */,
 				F64E1D3C1BFC1BB000CEA52D /* Resources */,
+				BF1823B1E22A7C05AB06523E /* Embed Pods Frameworks */,
+				3543AA205A03F632AD4A9142 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3543AA205A03F632AD4A9142 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1823B1E22A7C05AB06523E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F76C0ABE1369003EAA337227 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F64E1D3A1BFC1BB000CEA52D /* Sources */ = {
@@ -411,6 +486,7 @@
 		};
 		F64E1D6C1BFC1BB000CEA52D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADB5D9DDBD11DACFC861963 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WestpacWeather/Info.plist;
@@ -422,6 +498,7 @@
 		};
 		F64E1D6D1BFC1BB000CEA52D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058711A6A624C876BD1447B0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WestpacWeather/Info.plist;
@@ -498,6 +575,7 @@
 				F64E1D6D1BFC1BB000CEA52D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F64E1D6E1BFC1BB000CEA52D /* Build configuration list for PBXNativeTarget "WestpacWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +584,7 @@
 				F64E1D701BFC1BB000CEA52D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F64E1D711BFC1BB000CEA52D /* Build configuration list for PBXNativeTarget "WestpacWeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +593,7 @@
 				F64E1D731BFC1BB000CEA52D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
